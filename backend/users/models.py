@@ -11,10 +11,10 @@ class User(AbstractUser):
         blank=True,
         max_length=255,
     )
-    group = models.ManyToManyField(
-        "course.Group",
+    mid = models.CharField(
+        max_length=256,
+        null=True,
         blank=True,
-        related_name="user_group",
     )
 
     def get_absolute_url(self):
